@@ -1,3 +1,72 @@
+@import "bootstrap-sprockets";
+@import "bootstrap";
+/* mixins, variables, etc. */
+$gray-medium-light: #eaeaea;
+@mixin box_sizing {
+-moz-box-sizing: border-box;
+-webkit-box-sizing: border-box;
+} 
+
+/* miscellaneous */
+// .debug_dump {
+//     clear: both;
+//     float: left;
+//     width: 100%;
+//     margin-top: 45px;
+//     @include box_sizing;
+// }
+
+/* sidebar */
+aside {
+    section.user_info {
+    margin-top: 20px;
+    }
+    section {
+    padding: 10px 0;
+    margin-top: 20px;
+    &:first-child {
+    border: 0;
+    padding-top: 0;
+    }
+    span {
+    display: block;
+    margin-bottom: 3px;
+    line-height: 1;
+    }
+    h1 {
+    font-size: 1.4em;
+    text-align: left;
+    letter-spacing: -1px;
+    margin-bottom: 3px;
+    margin-top: 0px;
+    }
+    }
+    }
+    .gravatar {
+    float: left;
+    margin-right: 10px;
+    }
+    .gravatar_edit {
+    margin-top: 15px;
+    }
+
+    /* forms */
+
+
+#error_explanation {
+    color: red;
+    ul {
+    color: red;
+    margin: 0 0 30px 0;
+    }
+}
+
+.field_with_errors {
+    @extend .has-error;
+    .form-control {
+    color: $state-danger-text;
+    }
+}
 .header{
     height: 60px;
     width: 100%;
@@ -6,7 +75,7 @@
     display: flex;
     align-items: center;
     justify-content: space-evenly;
-    /* position: fixed; */
+    position: fixed;
 }
 #a_logo{
     height: 40px;
@@ -16,9 +85,8 @@
 }
 #a_logo{
     height: 40px;
-    width: 130px;
-    /* padding: 20px 15px 15px; */
-    padding: 10px;
+    width: 200px;
+    padding: 20px 15px 15px;
     object-fit: cover;
 }
 #loc{
@@ -59,11 +127,11 @@
 .drop-down{
      height: 40px;
     width: 51.6px;
-    border-top-left-radius:4px ;
+    /* border-top-left-radius:4px ;
     border-bottom-left-radius: 4px;
     background-color: #ced4da23;
     color: #0f1111;
-    padding: 0px 0px 0px 5px;
+    padding: 0px 0px 0px 5px; */
     border: none;
     font-size: 14px; 
     
@@ -145,7 +213,7 @@
     background-color: #232f3e;
     font-size: 12px;
     display: flex;
-    /* position: fixed; */
+    position: fixed;
         
 }
 .menu{

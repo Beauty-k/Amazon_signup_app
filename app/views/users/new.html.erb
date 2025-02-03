@@ -1,179 +1,16 @@
-<style>
-    *{
-        margin: 0;
-        padding: 0;
-        font-family: Arial, Helvetica, sans-serif;
-    }
-    .sign-up-form{
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        padding: 20px;
-    }
-    .header{
-        height: 50px;
-        width: 100%;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        
-    }
-    #a-logo{
-        height: 50px;
-        width: 180px;
-        object-fit: cover;
-        padding: 10px;
-    }
-    #input-box{
-        height: 30px;
-        width: 296px;
-        border: 0.5px solid rgba(0, 0, 0, 0.495);
-        border-radius: 5px;
-    }
-    .form{
-        height: 520px;
-        width: 320px;
-        display: flex;
-        flex-direction: column;
-        border: 2px solid rgba(0, 0, 0, 0.144);
-        border-radius: 6px;
-        padding: 20px 28px;
-    }
 
-    #submit-button{
-        text-decoration: none;
-        height: 29px;
-        width: 294px;
-        color: black;
-        background-color: rgb(255, 213, 0);
-        border: 2px solid rgb(255, 213, 0);
-        border-radius: 40px;
-        margin-top: 5px;
-        margin-bottom: 15px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-    }
-    #f-h1{
-        font-size: 28px;
-        font-weight: 500;
-        margin-bottom: 20px;
-
-    }
-    #input-box{
-        height: 30px;
-        width: 296px;
-        border: 0.5px solid rgba(0, 0, 0, 0.495);
-        border-radius: 5px;
-        margin-bottom: 10px;
-    }
-
-    #input-box:hover{
-        border: 2px solid #007185;
-    }
-    #s-label{
-        font-size: 14px;
-        font-weight: 700;
-        margin-bottom: 5px;
-    }
-    
-    #terms{
-        font-size: 12px;
-        text-decoration: none;
-        color: black;
-        margin-top: 15px;
-        margin-bottom: 20px;
-    }
-  
-    .suggestion hr{
-        width: 330px;
-        opacity: 0.5;
-        margin-top: 25px;
-        margin-bottom: 15px;
-    }
-    
-   #hr2{
-        width: 330px;
-        opacity: 0.5;
-        margin-top: 25px;
-        margin-bottom: 25px;
-   }
-    #btn2{
-        text-decoration: none;
-        color: black;
-    }
-   
-    #l1{
-        font-size: 14px;
-        font-weight: 700;
-        color: #0f1111;
-        margin-bottom: 5px;
-    }
-    #l2{
-        font-size: 14px;
-        color: #007185;
-    }
-    .f1{
-        text-decoration: none;
-        margin-right: 20px;
-        padding: 5px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        margin-top: 10px;
-        gap: 25px;
-    }
-    .terms{
-        text-decoration: none;
-        color: #007185;
-        font-size: 12px;
-    }
-    .f2{
-        margin-top: 12px;
-        color: #565959;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        font-size: 12px;
-    }
-    .user{
-        display: flex;
-        font-size: 14px;
-    }
-    #login{
-        text-decoration: none;
-        color: #007185;
-    }
-    .input-area{
-        height: 30px;
-        width: 310px;
-        border: 0.5px solid rgba(0, 0, 0, 0.495);
-        border-radius: 5px;
-        margin-bottom: 10px;
-    }
-
-    .label1{
-        display: flex;
-        flex-direction: column;
-        font-size: 14px;
-        color: #0f1111;
-        font-weight: 700;
-        margin-bottom: 5px;
-    }
-  
-</style>
-
-<div class="header">
+<div class="header-section">
     <%= image_tag 'logo.png', id: "a-logo" %>
 </div>
 <div class="sign-up-form">
 
     <div class="form">
-        <%= form_with model: @customer, local: true do |form|%>
+        <%= form_with(model: @user, local: true, data: { turbo: false })  do |form|%>
+        <%= render 'shared/error_messages' %>
             <h1 id = "f-h1">Create account</h1>
             <div class="label1">
-                <%= form.label :Name, 'your Name' %>
-                <%= form.text_field :Name, class: "input-area" %>
+                <%= form.label :name, 'your Name' %>
+                <%= form.text_field :name, class: "input-area" %>
             </div>
             <div class="label1">
                 <%= form.label :email, 'Mobile number or email' %>
@@ -189,6 +26,7 @@
                 <%= form.label :password_confirmation, 'Re-enter password' %>
                 <%= form.password_field :password_confirmation, class: "input-area" %>
             </div>
+            
             <div class="submit-button">
                 <%= form.submit "Continue", id: "submit-button" %>
             </div>
@@ -209,7 +47,7 @@
 
             <div class="user">
             <div>Already have an account?</div> 
-            <%= link_to 'Sign in', login_path, id: "login" %>
+            <%= link_to 'Sign in', "#", id: "login" %>
             </div>
         </div>
     </div>
