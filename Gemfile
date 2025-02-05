@@ -65,3 +65,5 @@ end
 
 
 
+
+gem "webpacker", "~> 5.4"

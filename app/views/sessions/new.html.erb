@@ -1,0 +1,54 @@
+<div class="header-section">
+    <%= image_tag 'logo.png', id: "a-logo" %>
+</div>
+
+<div class="login-form">
+  <div class="form2">
+    <%= form_with(url: login_path, scope: :session, local: true, data: { turbo: false })do |form|%>
+        <h1 id = "f-h1">Sign in</h1>
+        <div class="label1">
+          <%= form.label :email, 'Mobile number or email' %>
+          <%= form.text_field :email, class: "input-area" %>
+        </div>
+
+        <div class="label1">
+          <%= form.label :password, 'Password' %>
+          <%= form.password_field :password, class: "input-area" %>
+        </div>
+        
+        
+        <div class="submit-button">
+          <%= form.submit "Continue", id: "submit-button" %>
+        </div>
+        <%= link_to 'By continuing, you agree to Amazons Conditions of Use and Privacy Notice.', "#", id: "terms" %>
+        <%= link_to 'Need help?', "#",class: "help", id: "help" %>
+        <div class="base">
+          <div id = "l1">Buying for work?</div>
+          <span id = "l2">Shop on Amazon Business</span>
+        </div>
+      <% end %>
+  </div>
+        <div class="users"><p>New to Amazon?</p></div>
+        <div class="div">
+          <%= link_to ' Create your Amazon account', signup_path, id: "s-up" %> 
+        </div>
+    
+    <hr style="border-top:1px solid rgba(243, 148, 148, 0.32);">
+    <div class = "footer">
+      <div class="f1">
+        <%= link_to 'Conditions of Use', "#",class: "terms" %> 
+        <%= link_to 'Privacy Notice', "#",class: "terms" %>
+        <%= link_to 'Help', "#",class: "terms" %> 
+      </div>
+      <div class="f2">
+        <span>© 1996-2025, Amazon.com, Inc. or its affiliates</span>
+      </div>
+  </div>
+
+<%#= link_to "Log out", logout_path, method: :delete %>
+<%#= link_to 'Sign up now', signup_path %>
+<% if current_user %>
+  <%= link_to "Profile", user_path(current_user) %>
+<% end %>
+
+<%#= render "users/shared/links" %>
