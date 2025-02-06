@@ -8,6 +8,7 @@ class UsersController < ApplicationController
 
   def create
     @user = User.create(user_params)
+    # binding.pry
     if @user.save
       # flash[:success] = "Account created successfully!"
       redirect_to root_path, notice: "Account created successfully!"

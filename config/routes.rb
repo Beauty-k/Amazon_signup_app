@@ -1,13 +1,12 @@
 Rails.application.routes.draw do
+  get "products/index"
   get "sessions/new"
   # get "amazon_clone/index"
   resources :users
   resources :products, only: [:index, :show]
-  resource :cart, only: [:show]  # Singular resource for a single cart per user
-  resources :cart_items, only: [:create, :destroy] 
-  # resources :products
-  # post 'user/create'
-  # get "users/new"
+  resource :cart, only: [:show] 
+  resources :cart_items, only: [:index, :create, :destroy]
+  # get '/cart_items',to: 'cart_items#create'
   get '/signup', to: 'users#new'
   get '/login', to: 'sessions#new'
   post '/login', to: 'sessions#create'

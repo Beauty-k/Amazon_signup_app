@@ -1,7 +1,11 @@
 class CartItemsController < ApplicationController
     before_action :set_cart
 
+    def index
+        @cart_items = CartItem.all
+    end
     def create
+        logger.debug "Params: #{params.inspect}"
         product = Product.find(params[:product_id])
         cart_item = @cart.cart_items.find_by(product: product)
 

@@ -1,73 +1,224 @@
+<div class="header-wrapper">
+    <div class="header">
+        
+        <%= image_tag 'amazon_logo.png', alt: "amazon_logo", id: "a_logo" %>
+        
+        <div id = "text1">
+            <%= link_to 'Deliver to', "#", id: "loc" %>
+            <p id="icon">
+                <i class="fa-solid fa-location-dot"></i>
+                <span id="Ind">India</span>
+            </p>
+        </div>
+                    <!-- Search form -->
+    <div class="search-sec">
 
-<div class="header">
-    
-    <%= image_tag 'amazon_logo.png', alt: "amazon_logo", id: "a_logo" %>
-    
-    <div id = "text1">
-        <%= link_to 'Deliver to', "#", id: "loc" %>
-        <p id="icon">
-            <i class="fa-solid fa-location-dot"></i>
-            <span id="Ind">India</span>
-        </p>
+            <%= form_with url: products_path, method: :get do |form|%>
+                <div class="search">
+                    <%= form.select :categories, options_for_select(["All"]), class: "drop-down", id: "d-d" %>
+                    <%= form.text_field :query,placeholder: "Search Amazon", class: "input-box" %>
+                    <button type="submit" class="search-icon">
+                        <i class="fa-solid fa-magnifying-glass"></i>
+                    </button>
+                </div>
+            <% end %>
     </div>
-                <!-- Search form -->
-   <div class="search-sec">
 
-        <%= form_with url: products_path, method: :get do |form|%>
-            <div class="search">
-                <%= form.select :categories, options_for_select(["All"]), class: "drop-down" %>
-                <%= form.text_field :query,placeholder: "Search Amazon", id: "input-box" %>
-                <button type="submit" class="search-icon">
-                    <i class="fa-solid fa-magnifying-glass"></i>
-                </button>
+
+    <div class="lng">
+            <%= image_tag 'f-icon.png', id: "f-icon" %>
+            <p id="en">EN</p>
+    </div>
+
+        <div class="s-L">
+            <%#= link_to login_path, class: "s-rend" do %>
+                <div class="s-in">
+                    <%#= render 'sessions/form' %>
+                    
+                    <%= link_to "Hello,Sign In", login_path, class: "s-rend" %>
+                    <%#= render 'devise/sessions/new' %>
+                    <span id="A-l">Accounts & Lists</span>
+                </div>
+            <%# end %>
+        </div>
+
+        <div class="return">
+            <%= link_to 'Returns', "#", id: "ret" %>
+            <%= link_to '& Orders', "#", id: "ord" %>
+        </div>
+        
+        <div class="cart">
+            <%#= link_to image_tag()'text', path %>
+            <i class="fa-solid fa-cart-shopping" id="c-i"></i>
+            <%= link_to 'Cart', cart_items_path, id: "cart" %>
+        </div>
+    </div>
+    <div class="panel">
+        <div class="menu">
+            <%= link_to "#", class:"Menu-link" do %>
+                <div class="render"></div>
+                <i class="fa-solid fa-bars"></i>
+                <span id = "m-all">All</span>  
+            <% end %>
+        </div>
+
+        <div class="panel-opts">
+            <%= link_to 'Todays Deal', "#", class: "opts"%>
+            <%= link_to 'Customer Service', "#", class: "opts"%>
+            <%= link_to 'Registry', "#", class: "opts" %>
+            <%= link_to 'Gift cards', "#", class: "opts" %>
+            <%= link_to 'Sell', "#", class: "opts" %>
+        </div>
+    </div> 
+</div>
+
+
+
+<!-- Hero Section-->
+<div class="hero-section">
+    <%= image_tag 'hero1.jpg' %>
+    <div class="hero-msg">
+        <p id = "h-msg"> You are on amazon.com. You can also shop on Amazon India for millions of products with fast local delivery. </p>
+        <%= link_to 'Click here to go to amazon.in', "#", id: "h-click" %>
+    </div>
+
+</div>
+
+<!-- Products Section -->
+<div class="product-section">
+    <div class="row1 row">
+        <div class="product1 products">
+            <h3>New home arrivals under $50</h3>
+            <div class="img1">
+                <%= image_tag 'kitchen.jpg', class: "product img" %>
+                <p>kitchen & dining</p>
             </div>
-        <% end %>
-   </div>
-
-   <div class="lng">
-        <%= image_tag 'f-icon.png', id: "f-icon" %>
-        <p id="en">EN</p>
-   </div>
-
-    <div class="s-L">
-        <%#= link_to login_path, class: "s-rend" do %>
-            <div class="s-in">
-                <%#= render 'sessions/form' %>
-                
-                <%= link_to "Hello,Sign In", login_path, class: "s-rend" %>
-                <%#= render 'devise/sessions/new' %>
-                <span id="A-l">Accounts & Lists</span>
+            <div>
+                <%= image_tag 'h-i.jpg', class: "product img" %>
+                <p>Home improvement</p>
             </div>
-        <%# end %>
+            <div
+>
+                <%= image_tag 'decor.jpg', class: "product img" %>
+                <p>Decor</p>
+            </div>
+            <div>
+                <%= image_tag 'pillow.jpg', class: "product  img" %>
+                <p>Bedding & bath</p>
+            </div>
+        </div>
+        <div class="product2 products">
+            <h3>Refresh your space</h3>
+            <div class="img1">
+                <%= image_tag 'Dining.jpg', class: "product img" %>
+                <p>Dining</p>
+            </div>
+            <div>
+                <%= image_tag 'H.jpg', class: "product img" %>
+                <p>Home</p>
+            </div>
+            <div>
+                <%= image_tag 'k.jpg', class: "product img" %>
+                <p>Kitchen</p>
+            </div>
+            <div>
+                <%= image_tag 'h&b.jpg', class: "product  img" %>
+                <p>Health & beauty</p>
+            </div>
+        </div>
+        <div class="product3 products">
+            <h3>Shop for your home essentials</h3>
+            <div class="img1">
+                <%= image_tag 'CleaningTools.jpg', class: "product img" %>
+                <p>Cleaning Tools</p>
+            </div>
+            <div>
+                <%= image_tag 'HomeStorage.jpg', class: "product img" %>
+                <p>Home Storage</p>
+            </div>
+            <div>
+                <%= image_tag 'HomeDecor.jpg', class: "product img" %>
+                <p>Home Decor</p>
+            </div>
+            <div>
+                <%= image_tag 'Bedding.jpg', class: "product  img" %>
+                <p>Bedding</p>
+            </div>
+        </div>
+        <div class="product4 products">
+            <h3>Toys under $25</h3>
+            <div class="toy">
+                <%= image_tag 'Toy.jpg', id: "toy" %>
+            </div>
+        </div>
     </div>
 
-    <div class="return">
-        <%= link_to 'Returns', "#", id: "ret" %>
-        <%= link_to '& Orders', "#", id: "ord" %>
+    <div class="row2 row">
+          <div class="product1 products">
+            <h3>New home arrivals under $50</h3>
+            <div class="img1">
+                <%= image_tag 'kitchen.jpg', class: "product img" %>
+                <p>kitchen & dining</p>
+            </div>
+            <div>
+                <%= image_tag 'h-i.jpg', class: "product img" %>
+                <p>Home improvement</p>
+            </div>
+            <div>
+                <%= image_tag 'decor.jpg', class: "product img" %>
+                <p>Decor</p>
+            </div>
+            <div>
+                <%= image_tag 'pillow.jpg', class: "product  img" %>
+                <p>Bedding & bath</p>
+            </div>
+        </div>
+        <div class="product2 products">
+            <h3>Refresh your space</h3>
+            <div class="img1">
+                <%= image_tag 'Dining.jpg', class: "product img" %>
+                <p>Dining</p>
+            </div>
+            <div>
+                <%= image_tag 'H.jpg', class: "product img" %>
+                <p>Home</p>
+            </div>
+            <div>
+                <%= image_tag 'k.jpg', class: "product img" %>
+                <p>Kitchen</p>
+            </div>
+            <div>
+                <%= image_tag 'h&b.jpg', class: "product  img" %>
+                <p>Health & beauty</p>
+            </div>
+        </div>
+        <div class="product3 products">
+            <h3>Shop for your home essentials</h3>
+            <div class="img1">
+                <%= image_tag 'CleaningTools.jpg', class: "product img" %>
+                <p>Cleaning Tools</p>
+            </div>
+            <div>
+                <%= image_tag 'HomeStorage.jpg', class: "product img" %>
+                <p>Home Storage</p>
+            </div>
+            <div>
+                <%= image_tag 'HomeDecor.jpg', class: "product img" %>
+                <p>Home Decor</p>
+            </div>
+            <div>
+                <%= image_tag 'Bedding.jpg', class: "product  img" %>
+                <p>Bedding</p>
+            </div>
+        </div>
+        <div class="product4 products">
+            <h3>Toys under $25</h3>
+            <div class="toy">
+                <%= image_tag 'Toy.jpg', id: "toy" %>
+            </div>
+        </div>
     </div>
-    
-    <div class="cart">
-        <%#= link_to image_tag()'text', path %>
-        <i class="fa-solid fa-cart-shopping" id="c-i"></i>
-        <%= link_to 'Cart', "#", id: "cart" %>
     </div>
 </div>
 
-<div class="panel">
 
-    <div class="menu">
-        <%= link_to "#", class:"Menu-link" do %>
-            <div class="render"></div>
-            <i class="fa-solid fa-bars"></i>
-            <span id = "m-all">All</span>  
-        <% end %>
-    </div>
-
-    <div class="panel-opts">
-        <%= link_to 'Todays Deal', "#", class: "opts"%>
-        <%= link_to 'Customer Service', "#", class: "opts"%>
-        <%= link_to 'Registry', "#", class: "opts" %>
-        <%= link_to 'Gift cards', "#", class: "opts" %>
-        <%= link_to 'Sell', "#", class: "opts" %>
-    </div>
-</div> 

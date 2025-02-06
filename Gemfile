@@ -63,7 +63,9 @@ group :test do
   gem "selenium-webdriver"
 end
 
+# debugging tool - binding.pry
+gem 'pry'
+gem 'pry-rails'
 
-
-
+# webpack
 gem "webpacker", "~> 5.4"
