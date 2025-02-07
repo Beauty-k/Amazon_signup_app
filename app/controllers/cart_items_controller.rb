@@ -5,14 +5,12 @@ class CartItemsController < ApplicationController
         @cart_items = CartItem.all
     end
     def create
-        logger.debug "Params: #{params.inspect}"
         product = Product.find(params[:product_id])
-        cart_item = @cart.cart_items.find_by(product: product)
-
+        cart_item = @cart.cart_items.find_by(product: product)           
         if cart_item
             cart_item.increment(:quantity)
         else
-            cart_item = @cart.cart_items.build(product: Product, quantity: 1)
+            cart_item = @cart.cart_items.build(product: product, quantity: 1)
         end
 
         if cart_item.save
@@ -25,9 +23,14 @@ class CartItemsController < ApplicationController
     end
 
     def destroy
-        cart_item = @cart.cart_items.find(params[:id])
-        cart_item.destroy
-        flash[:success] = "product removed from cart"
+        # cart_item = @cart.cart_items.find(params[:id])
+        cart_item = CartItem.find_by(id: params[:id])
+        if cart_item
+            cart_item.destroy
+            flash[:success] = "product removed from cart"
+        else
+            flash[:error] = "product not found"
+        end
         redirect_to cart_path(@cart)
     end
     private

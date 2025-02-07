@@ -6,11 +6,11 @@ Rails.application.routes.draw do
   resources :products, only: [:index, :show]
   resource :cart, only: [:show] 
   resources :cart_items, only: [:index, :create, :destroy]
-  # get '/cart_items',to: 'cart_items#create'
+  # delete '/cart_items',to: 'cart_items#destroy'
   get '/signup', to: 'users#new'
   get '/login', to: 'sessions#new'
   post '/login', to: 'sessions#create'
-  delete '/logout', to: 'sessions#destroy'
+  get '/logout', to: 'sessions#destroy'
   get "up" => "rails/health#show", as: :rails_health_check
   get "/render_profile", to: "users#render_profile"
 
