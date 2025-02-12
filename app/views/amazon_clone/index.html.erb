@@ -50,7 +50,7 @@
         <div class="cart">
             <%#= link_to image_tag()'text', path %>
             <i class="fa-solid fa-cart-shopping" id="c-i"></i>
-            <%= link_to "Cart(#{@cart_count ||= 0})", cart_items_path, id: "cart" %>
+            <%= link_to "Cart(#{@cart_count ||= 0})", cart_path, id: "cart" %>
         </div>
     </div>
     <div class="panel">
@@ -88,58 +88,55 @@
 <div class="product-section">
     <div class="row1 row">
         <div class="product1 products">
-            <h3>New home arrivals under $50</h3>
-            <div class="img1">
-                <%= image_tag 'kitchen.jpg', class: "product img" %>
-                <p>kitchen & dining</p>
-            </div>
-            <div>
-                <%= image_tag 'h-i.jpg', class: "product img" %>
-                <p>Home improvement</p>
-            </div>
-            <div
->
-                <%= image_tag 'decor.jpg', class: "product img" %>
-                <p>Decor</p>
-            </div>
-            <div>
-                <%= image_tag 'pillow.jpg', class: "product  img" %>
-                <p>Bedding & bath</p>
-            </div>
+            <%= link_to office_product_path, class:" o-p-link" do %>
+                <h3>New year, new supplies</h3>
+                <div class = "p1-img-b">
+                    <%= image_tag 'office-p.jpg', class: "p1-img"%>
+                </div>
+                <span class = "bottom-link"> Shop office products </span>
+            <% end %>
         </div>
-        <div class="product2 products">
+
+        <div class="product2">
             <h3>Refresh your space</h3>
-            <div class="img1">
-                <%= image_tag 'Dining.jpg', class: "product img" %>
-                <p>Dining</p>
+            <div class="p2-sec1 temp">
+                <div class="p2-img">
+                    <%= image_tag 'Dining.jpg', class: "product img" %>
+                    <p>Dining</p>
+                </div>
+                <div class="p2-img">
+                    <%= image_tag 'H.jpg', class: "product img" %>
+                    <p>Home</p>
+                </div>
             </div>
-            <div>
-                <%= image_tag 'H.jpg', class: "product img" %>
-                <p>Home</p>
+
+            <div class="p2-sec2 temp">
+                <div class="p2-img">
+                    <%= image_tag 'k.jpg', class: "product img" %>
+                    <p>Kitchen</p>
+                </div>
+                <div class="p2-img">
+                    <%= image_tag 'h&b.jpg', class: "product  img" %>
+                    <p>Health & beauty</p>
+                </div>
             </div>
-            <div>
-                <%= image_tag 'k.jpg', class: "product img" %>
-                <p>Kitchen</p>
-            </div>
-            <div>
-                <%= image_tag 'h&b.jpg', class: "product  img" %>
-                <p>Health & beauty</p>
-            </div>
+
         </div>
         <div class="product3 products">
             <h3>Shop for your home essentials</h3>
             <div class="img1">
-                <%= image_tag 'CleaningTools.jpg', class: "product img" %>
+                <%= image_tag 'CleaningTools.jpg', class: "product img " %>
                 <p>Cleaning Tools</p>
             </div>
             <div>
-                <%= image_tag 'HomeStorage.jpg', class: "product img" %>
+                <%= image_tag 'HomeStorage.jpg', class: "product img " %>
                 <p>Home Storage</p>
             </div>
             <div>
                 <%= image_tag 'HomeDecor.jpg', class: "product img" %>
                 <p>Home Decor</p>
             </div>
+            
             <div>
                 <%= image_tag 'Bedding.jpg', class: "product  img" %>
                 <p>Bedding</p>

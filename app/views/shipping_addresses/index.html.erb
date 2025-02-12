@@ -1,0 +1,23 @@
+<h2>My Shipping Address</h2>
+<%= link_to 'Add new address', new_shipping_address_path, class: "new-address-link" %>
+<table>
+    <tr>
+        <th>Full Name</th>
+        <th>Phone</th>
+        <th>Address</th>
+        <th>Default</th>
+        <th>Actions</th>
+    </tr>
+    <% @shipping_addresses.each do |address| %>
+        <tr>
+        <td> <%= address.full_name%> </td>
+        <td> <%= address.phone_number%> </td>
+        <td> <%= address.address_line1%>, <%= address.city%>, <%= address.state%>, <%= address.zip_code%> </td>
+        <td> <%= address.default ? "✔" %> </td>
+            <td>
+                <%= link_to 'Edit', edit_address_path(address), class: "edit-link" %>
+                <%= link_to 'Delete', shipping_address_path(address),data: {confirm: "Are you sure?"}, class: "edit-link" %>
+            </td>
+        </tr>
+    <% end %>
+</table>

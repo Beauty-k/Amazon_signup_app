@@ -1,5 +1,7 @@
 class User < ApplicationRecord
     has_many :cart, dependent: :destroy
+    has_many :checkouts
+
     after_create :create_cart
     before_save {self.email = email.downcase}
     validates :name, presence: true, length: {maximum: 50}

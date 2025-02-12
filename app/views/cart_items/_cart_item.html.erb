@@ -1,0 +1,9 @@
+<div class="cart-item">
+  <span><%=  item.product.name %></span>
+  <span class = "c-i"><%=  item.quantity %></span>
+  <span>₹<%= item.product.price %></span>
+  <span>₹<%= item.product.price * item.quantity %></span>
+  <span>
+    <%= link_to "Remove", cart_item_path(item), method: :delete, class: "btn-rem" %>
+  </span>
+</div class="cart-item">

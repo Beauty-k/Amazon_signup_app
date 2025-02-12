@@ -1,0 +1,24 @@
+<div class="address">
+  <div class="checkout-form">
+    <h4>Add an address</h4>
+    <hr>
+    <h2>Enter a new shipping address</h2>
+    <div class="inr-box">
+
+    </div>
+    <%= form_with(model: @shipping_address, local: true) do |form| %>
+      <div class="addr">
+        <p id = "f-element"><%= form.label :full_name %><br> <%= form.text_field :full_name %></p>
+        <p id = "f-element"><%= form.label :phone_number %><br> <%= form.text_field :phone_number %></p>
+        <p id = "f-element"><%= form.label :address_line1 %><br> <%= form.text_field :address_line1 %></p>
+        <p id = "f-element"><%= form.label :address_line2 %><br> <%= form.text_field :address_line2 %></p>
+        <p id = "f-element"><%= form.label :city %><br> <%= form.text_field :city %></p>
+        <p id = "f-element"><%= form.label :state %><br> <%= form.text_field :state %></p>
+        <p id = "f-element"><%= form.label :zip_code %><br> <%= form.text_field :zip_code %></p>
+        <p id = "f-element"><%= form.label :country %><br> <%= form.text_field :country %></p>
+        <p id = "f-element"> <%= form.check_box :default %><%= form.label :default, "Make this my default address" %></p>
+        <p id = "f-element"><%= form.submit "Use this address", class: "save-address" %></p>
+      </div>
+    <% end %>
+  </div>
+</div>

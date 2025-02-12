@@ -1,0 +1,12 @@
+<%= form_with(model: @shipping_address, local: true) do |form| %>
+  <p><%= form.label :full_name %><br> <%= form.text_field :full_name %></p>
+  <p><%= form.label :phone_number %><br> <%= form.text_field :phone_number %></p>
+  <p><%= form.label :address_line1 %><br> <%= form.text_field :address_line1 %></p>
+  <p><%= form.label :address_line2 %><br> <%= form.text_field :address_line2 %></p>
+  <p><%= form.label :city %><br> <%= form.text_field :city %></p>
+  <p><%= form.label :state %><br> <%= form.text_field :state %></p>
+  <p><%= form.label :zip_code %><br> <%= form.text_field :zip_code %></p>
+  <p><%= form.label :country %><br> <%= form.text_field :country %></p>
+  <p><%= form.label :default, "Set as Default" %> <%= form.check_box :default %></p>
+  <p><%= form.submit "Save Address", class: "btn btn-success" %></p>
+<% end %>
