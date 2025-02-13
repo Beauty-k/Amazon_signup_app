@@ -2,7 +2,7 @@ Rails.application.routes.draw do
   get "products/index"
   get "sessions/new"
   # get "amazon_clone/index"
-  resources :users
+  resources :users, path: 'register_new_user'
   resources :products, only: [:index, :show]
   # resource :cart, only: [:show] 
   resources :cart_items, only: [:index, :create, :destroy]

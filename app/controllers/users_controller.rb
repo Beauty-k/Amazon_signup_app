@@ -7,10 +7,10 @@ class UsersController < ApplicationController
   end
 
   def create
+    @user = User.new
     @user = User.create(user_params)
     # binding.pry
     if @user.save
-      # flash[:success] = "Account created successfully!"
       redirect_to root_path, notice: "Account created successfully!"
     else
       render :new
@@ -19,7 +19,6 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find(params[:id])
-    # debugger
   end
 
   def render_profile

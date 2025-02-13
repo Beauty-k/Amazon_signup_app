@@ -36,6 +36,6 @@ class CartItemsController < ApplicationController
     private
 
     def set_cart
-        @cart = current_cart
+        @cart = current_cart 
     end
 end

@@ -1,5 +1,5 @@
 class User < ApplicationRecord
-    has_many :cart, dependent: :destroy
+    has_one :cart, dependent: :destroy
     has_many :checkouts
 
     after_create :create_cart
