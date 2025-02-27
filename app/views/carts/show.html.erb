@@ -8,8 +8,12 @@
     <span>Total</span>
     <span>Actions</span>
   </div>
-  <% @cart.cart_items.each do |item| %>
-    <%= render 'cart_items/cart_item', item: item %> 
+  <% if @cart.present? && @cart.cart_items.any? %>
+    <% @cart.cart_items.each do |item| %>
+      <%= render 'cart_items/cart_item', item: item %> 
+    <% end %>
+  <% else %>
+    <p>Your Cart is Empty!</p>
   <% end %>
 </table>
 </div>

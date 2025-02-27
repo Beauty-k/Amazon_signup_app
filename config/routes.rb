@@ -1,8 +1,14 @@
 Rails.application.routes.draw do
+  # devise_for :users
+  # devise_for :customers
+  # resources :customers
+  # devise_for :users
   get "products/index"
   get "sessions/new"
   # get "amazon_clone/index"
   resources :users, path: 'register_new_user'
+  # new_user_session GET  /users/sign_in
+  # destroy_user_session DELETE /users/sign_out
   resources :products, only: [:index, :show]
   # resource :cart, only: [:show] 
   resources :cart_items, only: [:index, :create, :destroy]

@@ -11,7 +11,7 @@ class CheckoutController < ApplicationController
     #Show checkout page
     def show
         @cart = current_user.cart
-        @order = Order.new
+        # @order = Order.new
         @shipping_address = ShippingAddress.new
     end
 

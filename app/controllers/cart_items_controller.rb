@@ -33,9 +33,9 @@ class CartItemsController < ApplicationController
         end
         redirect_to cart_path(@cart)
     end
-    private
+    # private
 
-    def set_cart
-        @cart = current_cart 
-    end
+    # def set_cart
+    #     @cart = current_cart 
+    # end
 end

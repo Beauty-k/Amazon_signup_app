@@ -1,10 +1,11 @@
+  <!--(url: login_path, scope: :session, local: true, data: { turbo: false }) -->
 <div class="header-section">
     <%= image_tag 'logo.png', id: "a-logo" %>
 </div>
 
 <div class="login-form">
   <div class="form2">
-    <%= form_with(url: login_path, scope: :session, local: true, data: { turbo: false })do |form|%>
+    <%= form_with(url: customers_path, scope: :session, local: true, data: { turbo: false })do |form|%>
         <h1 id = "f-h1">Sign in</h1>
         <div class="label1">
           <%= form.label :email, 'Mobile number or email' %>
