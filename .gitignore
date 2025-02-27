@@ -43,3 +43,7 @@ yarn-debug.log*
 echo "vendor/" >> .gitignore
 echo "tmp/" >> .gitignore
 echo "yarn.lock" >> .gitignore
+# postman.tar.gz
+echo "postman.tar.gz" >> .gitignore
+
+
