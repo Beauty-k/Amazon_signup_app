@@ -7,15 +7,7 @@ class ShippingAddress < ApplicationRecord
   validates :phone_number, format: { with: /\A\d{10}\z/, message: "must be 10 digits"} 
   validates :zip_code, format: { with: /\A\d{5,6}\z/, message: "must be 5 or 6 digits"}
 
-  before_save :ensure_only_one_default
+  include Defaultable
 
-  private
-
-  def ensure_only_one_default
-    
-    return unless default
-
-    user.shipping_addresses.excluding(self).update_all(default: false)
-  end
 
 end
