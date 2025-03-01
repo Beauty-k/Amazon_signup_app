@@ -1,0 +1,14 @@
+=> [32m#<ShippingAddress:0x00007fc7dc485228[0m
+ id: [1;36mnil[0m,
+ user_id: [1;34m2[0m,
+ full_name: [31m[1;31m"[0m[31mBeauty kumari[1;31m"[0m[31m[0m,
+ phone_number: [31m[1;31m"[0m[31m9955928830[1;31m"[0m[31m[0m,
+ address_line1: [31m[1;31m"[0m[31mNims university[1;31m"[0m[31m[0m,
+ address_line2: [31m[1;31m"[0m[31mBS Tomar city[1;31m"[0m[31m[0m,
+ city: [31m[1;31m"[0m[31mJaipur[1;31m"[0m[31m[0m,
+ state: [31m[1;31m"[0m[31mRajasthan[1;31m"[0m[31m[0m,
+ zip_code: [31m[1;31m"[0m[31m303121[1;31m"[0m[31m[0m,
+ country: [31m[1;31m"[0m[31mIndia[1;31m"[0m[31m[0m,
+ default: [1;36mtrue[0m,
+ created_at: [1;36mnil[0m,
+ updated_at: [1;36mnil[0m[32m>[0m

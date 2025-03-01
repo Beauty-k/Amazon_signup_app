@@ -38,9 +38,9 @@ class ShippingAddressesController < ApplicationController
 
     private
 
-    def set_shipping_adress
-        @shipping_address = current_user.shipping_addresses.find(params[:id])
-    end
+    # def set_shipping_adress
+    #     @shipping_address = current_user.shipping_addresses.find(params[:id])
+    # end
 
     def shipping_address_params
         params.require(:shipping_address).permit(:full_name, :phone_number, :address_line1, :address_line2, :city, :state, :country, :zip_code, :default)

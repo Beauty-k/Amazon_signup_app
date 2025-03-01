@@ -5,8 +5,10 @@ class User < ApplicationRecord
 #          :recoverable, :rememberable, :validatable
     has_one :cart, dependent: :destroy
     has_many :checkouts
+    has_many :shipping_addresses, dependent: :destroy
 
     after_create :create_cart
+    
     before_save {self.email = email.downcase}
     validates :name, presence: true, length: {maximum: 50}
     VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i

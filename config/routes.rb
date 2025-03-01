@@ -11,14 +11,14 @@ Rails.application.routes.draw do
   # destroy_user_session DELETE /users/sign_out
   resources :products, only: [:index, :show]
   # resource :cart, only: [:show] 
-  resources :cart_items, only: [:index, :create, :destroy]
+  resources :cart_items, only: [:index, :show, :create, :destroy]
   resources :shipping_addresses
   resources :checkout, only: [:show, :create]
   resources :orders, only: [:show]
   get 'cart', to: 'carts#show', as: 'cart'
   get "/checkout", to: "checkout#show"
   # get "checkout/index"
-  delete '/cart_items',to: 'cart_items#destroy'
+  delete '/cart_item',to: 'cart_items#destroy'
   # get '/checkout', to; 'checkouts#index'
   get '/signup', to: 'users#new'
   get '/login', to: 'sessions#new'
