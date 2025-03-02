@@ -71,3 +71,5 @@ gem 'pry-rails'
 gem "webpacker", "~> 5.4"
 
 gem "devise", "~> 4.9"
+gem "view_component"
+

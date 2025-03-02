@@ -8,27 +8,23 @@ class CartItemsController < ApplicationController
 
     def create
         product = Product.find(params[:product_id])
-        @cart = current_cart
-        cart_service = CartService.new(@cart,product)
+        cart_service = CartService.new(current_cart,product)
        
         if cart_service.add_product
-            flash[:success] = "product added to the cart"
-            redirect_to cart_path
+            redirect_to cart_path, notice: "product added to the cart"
         else
-            flash[:error] = "could not add product to cart"
-            redirect_to root_path
+            redirect_to root_path, notice: "could not add product to cart"
         end
     end
 
     def destroy
-        cart_service = CartService.new(@cart,nil)
+        cart_service = CartService.new(current_cart,nil)
 
         if cart_service.remove_product(params[:id])
-            flash[:success] = "product removed from cart"
+            redirect_to cart_path, notice: "product removed from cart"
         else
-            flash[:error] = "product not found"
+            redirect_to cart_path, notice: "product not found"
         end
-        redirect_to cart_path
     end
 
 

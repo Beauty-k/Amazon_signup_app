@@ -360,6 +360,10 @@ GEM
     unicode-emoji (4.0.4)
     uri (1.0.2)
     useragent (0.16.11)
+    view_component (3.21.0)
+      activesupport (>= 5.2.0, < 8.1)
+      concurrent-ruby (~> 1.0)
+      method_source (~> 1.0)
     warden (1.2.9)
       rack (>= 2.0.9)
     web-console (4.2.1)
@@ -418,6 +422,7 @@ DEPENDENCIES
   thruster
   turbo-rails
   tzinfo-data
+  view_component
   web-console
   webpacker (~> 5.4)
 

@@ -9,6 +9,6 @@ module Defaultable
     def ensure_only_one_default
         return unless default
         
-       self.class.where(user_id: user_id).where.not(id: id).update.all(default: false)
+       self.class.where(user_id: user_id).where.not(id: id).update_all(default: false)
     end
 end

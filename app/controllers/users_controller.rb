@@ -9,8 +9,6 @@ class UsersController < ApplicationController
   def create
     puts params.inspect
     @user = User.new(user_params)
-    # @user = User.create(user_params)
-    # binding.pry
     if @user.save
       redirect_to root_path, notice: "Account created successfully!"
     else

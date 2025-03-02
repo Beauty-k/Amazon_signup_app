@@ -4,6 +4,7 @@
   <span>₹<%= item.product.price %></span>
   <span>₹<%= item.product.price * item.quantity %></span>
   <span>
-    <%= button_to "Remove", cart_item_path(item), method: :delete, data: { turbo_method: :delete },  class: "btn-rem" %>
+    <%#= button_to "Remove", cart_item_path(item), method: :delete, data: { turbo_method: :delete },  class: "btn-rem" %>
+    <%= render DeleteButtonComponent.new(path: cart_item_path(item)) %>
   </span>
 </div >
