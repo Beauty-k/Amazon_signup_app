@@ -12,7 +12,7 @@ Rails.application.routes.draw do
 
 
   resources :checkout, only: [:show, :create]
-  resources :orders, only: [:show]
+  resources :orders
 
   get 'cart', to: 'carts#show', as: 'cart'
   get "/checkout", to: "checkout#show"

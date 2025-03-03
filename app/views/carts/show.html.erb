@@ -1,26 +1,24 @@
-<div class="shopping-cart">
-  <h2>Shopping Cart</h2>
 
-  <div class = "p-detail">
-    <span id = "c-heading">Product</span>
-    <span>Quantity</span>
-    <span>Price</span>
-    <span>Total</span>
-    <span>Actions</span>
+<h2 id="c-heading">Shopping Cart</h2>
+<div class="outer-cart outr">
+    <div class="shopping-cart">
+      <div class = "p-detail">
+        <span>Product</span>
+        <span>Quantity</span>
+        <span>Price</span>
+        <span>Total</span>
+        <span>Actions</span>
+      </div>
+      <% if @cart.present? && @cart.cart_items.any? %>
+        <% @cart.cart_items.each do |item| %>
+          <%= render 'cart_items/cart_item', item: item %> 
+        <% end %>
+      <% else %>
+        <p>Your Cart is Empty!</p>
+      <% end %>
   </div>
-  <% if @cart.present? && @cart.cart_items.any? %>
-    <% @cart.cart_items.each do |item| %>
-      <%= render 'cart_items/cart_item', item: item %> 
-    <% end %>
-  <% else %>
-    <p>Your Cart is Empty!</p>
-  <% end %>
-</table>
-</div>
 
-
-<div class="outer">
-  <span class="chechout">
+  <div class="chechout">
     <%= link_to "Proceed to Checkout", checkout_index_path, method: :get, class: "checkout-link" %>
-  </span>
+  </div>
 </div>

@@ -4,7 +4,8 @@ class User < ApplicationRecord
     has_one :cart, dependent: :destroy
     has_many :checkouts
     has_many :shipping_addresses, dependent: :destroy
-
+    has_many :orders, dependent: :destroy
+    
     after_create -> {CartCreationService.create_for(self)}
     
     before_save {self.email = email.downcase}

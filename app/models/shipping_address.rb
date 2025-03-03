@@ -1,6 +1,6 @@
 class ShippingAddress < ApplicationRecord
   belongs_to :user
-  # belongs_to :order, optional: true
+  belongs_to :order, optional: true
 
   validates :full_name, :phone_number, :address_line1, :address_line2, :city, :state, :zip_code, :country, presence: true
 

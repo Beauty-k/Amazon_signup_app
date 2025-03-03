@@ -1,18 +1,28 @@
-<h2>My Shipping Address</h2>
-<%= link_to 'Add new address', new_shipping_address_path, class: "new-address-link" %>
-    
-<table>
 
-    <% @shipping_addresses.each do |address| %>
-        <div>
-        <span> <%= address.full_name%> </span>
-        <span> <%= address.phone_number%> </span>
-        <span> <%= address.address_line1%>, <%= address.city%>, <%= address.state%>, <%= address.zip_code%> </span>
-            <span>
-                <%#= link_to 'Edit', edit_shipping_address_path(address), class: "edit-link" %>
-                <%= render EditButtonComponent.new(path: edit_shipping_address_path(address)) %>
-                <%= render ::DeleteButtonComponent.new(path: shipping_address_path(address))%>
-            </span>
+<h2 id="addr-heading">My Shipping Address</h2>
+
+<div class="outr">
+    <div class="addr">
+
+        <% @shipping_addresses.each do |address| %>
+            <div>
+                <span> <%= address.full_name%> </span> 
+                <span> <%= address.phone_number%> </span>
+                <span> <%= address.address_line1%>, <%= address.city%>, <%= address.state%>, <%= address.zip_code%> </span>
+                <span>
+                    <%= render EditButtonComponent.new(path: edit_shipping_address_path(address)) %>
+                    <%= render ::DeleteButtonComponent.new(path: shipping_address_path(address))%>
+                </span>
+            </div>
+        <% end %>
+
+        <div class="new-add-link">
+            <%= link_to 'Add new address', new_shipping_address_path, id: "new-address-link" %>
         </div>
-    <% end %>
-</table>
+    
+    </div>
+    <div class="buy">
+        <%= link_to 'Place Order', orders_path, class: "order-link" %>
+    </div>
+</div>
+

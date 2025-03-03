@@ -1,6 +1,6 @@
-class OrderController < ApplicationController
+class OrdersController < ApplicationController
     before_action :authenticate_user
-    before_action :set_order, only [:show, :cancel]
+    before_action :set_order, only: [:show, :cancel]
 
     def index
         @orders = current_user.orders.order(created_at: :desc)
@@ -22,7 +22,7 @@ class OrderController < ApplicationController
     private
 
     def set_order
-        @orders = current_user.orders.find(params[:id])
+        @orders = current_user.orders.find_by(id: params[:id])
         redirect_to orders_path, alert: "Order not found." unless @order
     end
 end

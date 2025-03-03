@@ -1,11 +1,10 @@
 class CartsController < ApplicationController
     before_action :authenticate_user
-    # before_action :set_cart
+  
     def show
         @cart = current_cart
-        if @cart
-            @cart_counts = @cart.cart_items.count
-        end
+        @cart_counts = @cart.cart_items.count
+        
     end
 
     def destroy

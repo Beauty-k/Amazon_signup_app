@@ -1,0 +1,22 @@
+<h1 id="ord-h2">My Orders</h1>
+<div class="orders-page">
+    <% if @orders.any? %>
+    <span>Order ID</span>
+    <span>Status</span>
+
+        <div class="orders-traversal">
+            <% @orders.each do |order| %>
+                <p> <%= order.id %> </p>
+                <p> <%= order.status.capitalize %> </p>
+
+                <%= link_to 'View', order_path(order), class: "btn" %>
+                <% if order.status == "pending" %>
+                <%= link_to 'Cancel Order', order_path(order), method: :patch, data: {confirm: "Are you sure"}, class: "cancel-order" %>
+                <% end %>
+            <% end %>
+        </div>
+        <% else %>
+        <p>No Order Found</p>
+    <% end %>
+ </div>
+<%= link_to 'Back to Products', products_path, class: "btn back" %>
